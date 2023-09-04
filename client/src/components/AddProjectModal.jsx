@@ -29,11 +29,13 @@ export default function AddProjectModal() {
     };
 
     if (loading) return null;
-    if (error) return 'Something went wrong'
+    if (error) return 'Something went wrong';
 
   return (
     <>
-        <button 
+        { !loading && !error && (
+         <>  
+         <button 
             type="button" 
             className="btn btn-primary" 
             data-bs-toggle="modal" 
@@ -92,11 +94,24 @@ export default function AddProjectModal() {
                             id="status" 
                             className="form-select" 
                             value= {status} 
-                            onChange={(e) => setStatus(e.target.value)}>   
+                            onChange={(e) => setStatus(e.target.value)}>    
                                 <option value="new">Not Started</option>
                                 <option value="progress">In Progress</option>
-                                <option value="completed">completed</option>
+                                <option value="completed">Completed</option>
                             </select>
+                    </div>
+                    
+                    <div className="mb-3">
+                        <label className="form-label">Client</label>
+                        <select id="clientId" className="form-select" value={clientId} onChange={(e) =>setClientId(e.target.value) } >
+
+                            <option value="">Select Client</option>
+                            { data.clients.map((client) => (
+                                <option key={client.id} value={client.id}>
+                                {client.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <button type = "submit" data-bs-dismiss="modal" className="btn btn-primary">Submit</button>
@@ -106,6 +121,9 @@ export default function AddProjectModal() {
             </div>
         </div>
         </div>
+         </> 
+        )}
+        
     </>
   )
 }
