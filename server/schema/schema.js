@@ -90,7 +90,7 @@ const mutation = new GraphQLObjectType({
           phone: args.phone,
         });
 
-        return client.save();
+        return client.save();  
       },
     },
     // Delete a client
