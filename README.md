@@ -1,5 +1,6 @@
 # task-master
-**Title: Project Management App with GraphQL**
+
+This project is my first attempt at building a Project Management App using GraphQL and Apollo Client. It allows users to manage clients and projects efficiently. Key features include client and project record management, database integration with MongoDB, and a GraphQL API for data retrieval and manipulation.
 
 **Key Features:**
 
@@ -47,4 +48,3 @@ The app leverages GraphQL to provide an API that offers fine-grained control ove
 
 5. **Environment Configuration:** Utilized environment variables with the dotenv library for configuring the application across different environments.
 
-This project management app showcases the principles of modern web development, emphasizing data modeling, API design with GraphQL, and database integration. It provides a foundation for creating scalable and efficient project management systems.
